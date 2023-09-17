@@ -21,9 +21,9 @@ const TransferList: React.FC = () => {
 
     // <------------- Render Component -------------->
     return (
-        <div className='w-screen h-screen  flex flex-col items-center justify-center p-2 md:p-5  bg-red-100'>
-            <h1 className='text-center font-bold text-lg mb-2 md:mb-4 bg-red-200 border border-white w-full py-4'>Transfer List</h1>
-            <div className='flex items-start justify-center w-full flex-1 max-w-[800px] max-h-screen '>
+        <div className='w-screen h-screen flex flex-col gap-2 items-center justify-start p-2 md:p-5 bg-red-100'>
+            <h1 className='text-center font-bold text-lg  bg-red-200 border border-white w-full py-4'>Transfer List</h1>
+            <div className='flex items-start justify-center w-full  max-w-[800px] '>
                 <DragDropContext onDragEnd={onDrag}>
                     {Object.entries(columns).map(([columnId, column]) => {
                         return (
@@ -39,7 +39,7 @@ const TransferList: React.FC = () => {
                                                 <div
                                                     ref={provided.innerRef}
                                                     {...provided.droppableProps}
-                                                    className={`${snapshot.isDraggingOver ? ' bg-blue-100 ' : ' bg-gray-100 '} transition-all rounded-b-lg p-2 md:p-8  min-h-[80vh] w-full `}
+                                                    className={`${snapshot.isDraggingOver ? ' bg-blue-100 ' : ' bg-gray-100 '} transition-all rounded-b-lg p-2 md:p-8   min-h-[400px] w-full `}
                                                 >
                                                     {column.items.map((item, index) => {
                                                         return (
